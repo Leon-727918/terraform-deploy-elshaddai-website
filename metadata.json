@@ -1,0 +1,7 @@
+{
+  "name": "ELshaddai Cloud Solutions",
+  "description": "A premium enterprise website for ELshaddai Cloud Solutions, specializing in cloud migration, legacy transformation, security, and agentic AI.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
