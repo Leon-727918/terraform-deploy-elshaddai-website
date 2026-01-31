@@ -1,13 +1,62 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Hero from '../../components/Hero';
 import ServiceCard from '../../components/ServiceCard';
 import EngagementModel from '../../components/EngagementModel';
 import IndustriesShowcase from '../../components/IndustriesShowcase';
 import { SERVICES } from '../../constants';
-import { Mail, Phone, MapPin, CheckCircle2, Cpu } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle2, Cpu, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
+
+interface ContactFormState {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+}
 
 const Home: React.FC = () => {
+    const formRef = useRef<HTMLFormElement>(null);
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState<{ type: 'success' | 'error' | null, message: string }>({ type: null, message: '' });
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus({ type: null, message: '' });
+
+        if (!formRef.current) return;
+
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        if (!serviceId || !templateId || !publicKey || templateId === 'YOUR_TEMPLATE_ID' || publicKey === 'YOUR_PUBLIC_KEY') {
+            console.error('EmailJS Configuration Error:', { serviceId, templateId, publicKey });
+            setStatus({ type: 'error', message: 'Configuration Error: Please update .env with valid EmailJS IDs.' });
+            setLoading(false);
+            return;
+        }
+
+        try {
+            await emailjs.sendForm(
+                serviceId,
+                templateId,
+                formRef.current,
+                {
+                    publicKey: publicKey,
+                }
+            );
+            setStatus({ type: 'success', message: 'Message sent successfully! We will get back to you soon.' });
+            formRef.current.reset();
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            setStatus({ type: 'error', message: 'Failed to send message. Please try again later or contact us directly.' });
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <>
             <Hero />
@@ -100,7 +149,7 @@ const Home: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm text-slate-500 uppercase tracking-widest">Email Us</p>
-                                        <p className="text-white font-bold">gladston.360443@gmail.com</p>
+                                        <p className="text-white font-bold">elshaddai.cloud@hotmail.com</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center space-x-4">
@@ -118,9 +167,9 @@ const Home: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm text-slate-500 uppercase tracking-widest">Global HQ</p>
-                                        <p className="text-white font-bold">EL-shaddai Cloud Solutions</p>
-                                        <p className="text-white font-bold">Vencode & PO, Near Puthukadai Town, Kanyakumari Dist.</p>
-                                        <p className="text-white font-bold">TN, India.</p>
+                                        <p className="text-white font-bold">EL-shaddai Cloud Solutions Pvt Ltd</p>
+                                        <p className="text-white font-bold">Vencode, near Marthandam, Kanyakumari Dist.</p>
+                                        <p className="text-white font-bold">TN, South India.</p>
                                         <p className="text-white font-bold">Pin 629171</p>
                                     </div>
                                 </div>
@@ -128,32 +177,61 @@ const Home: React.FC = () => {
                         </div>
 
                         <div className="glass p-8 lg:p-12 rounded-[40px] border-white/10">
-                            <form className="space-y-6">
+                            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-sm font-medium text-slate-300">Name</label>
-                                        <input type="text" className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500" placeholder="John Doe" />
+                                        <input
+                                            name="user_name"
+                                            required
+                                            type="text"
+                                            className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500"
+                                            placeholder="John Doe"
+                                        />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-sm font-medium text-slate-300">Work Email</label>
-                                        <input type="email" className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500" placeholder="john@company.com" />
+                                        <input
+                                            name="user_email"
+                                            required
+                                            type="email"
+                                            className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500"
+                                            placeholder="john@company.com"
+                                        />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-slate-300">Subject</label>
-                                    <select className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500">
-                                        <option>Cloud Migration</option>
-                                        <option>Agentic AI Consulting</option>
-                                        <option>Full Stack Development</option>
-                                        <option>Legacy Modernization</option>
+                                    <select
+                                        name="subject"
+                                        className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500"
+                                    >
+                                        <option value="Cloud Migration">Cloud Migration</option>
+                                        <option value="Agentic AI Consulting">Agentic AI Consulting</option>
+                                        <option value="Full Stack Development">Full Stack Development</option>
+                                        <option value="Legacy Modernization">Legacy Modernization</option>
                                     </select>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-slate-300">Message</label>
-                                    <textarea className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500 h-32" placeholder="Tell us about your project..."></textarea>
+                                    <textarea
+                                        name="message"
+                                        required
+                                        className="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500 h-32"
+                                        placeholder="Tell us about your project..."
+                                    ></textarea>
                                 </div>
-                                <button className="w-full bg-[#BE123C] hover:bg-rose-700 text-white py-4 rounded-xl font-bold transition-all shadow-xl shadow-rose-900/20">
-                                    Send Inquiry
+                                {status.message && (
+                                    <div className={`p-4 rounded-xl ${status.type === 'success' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'}`}>
+                                        {status.message}
+                                    </div>
+                                )}
+                                <button
+                                    type="submit"
+                                    disabled={loading}
+                                    className="w-full bg-[#BE123C] hover:bg-rose-700 text-white py-4 rounded-xl font-bold transition-all shadow-xl shadow-rose-900/20 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Send Inquiry'}
                                 </button>
                             </form>
                         </div>

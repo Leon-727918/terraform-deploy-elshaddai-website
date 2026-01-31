@@ -172,7 +172,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'CEO & Founder',
     bio: 'Visionary leader with 15+ years in cloud architecture and enterprise modernization.',
     imageUrl: '/images/sushma2.png',
-    linkedinUrl: 'https://linkedin.com'
+    linkedinUrl: 'https://www.linkedin.com/in/gorlin-sushma-a0a177135/'
   },
   {
     id: 'cto',
