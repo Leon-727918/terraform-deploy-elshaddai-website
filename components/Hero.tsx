@@ -23,7 +23,7 @@ const SLIDES: Slide[] = [
     subtitle: "Harness the power of data to build experiences and technologies that work smarter, drive results, and fuel innovation.",
     primaryBtn: "Get in Touch",
     secondaryBtn: "Explore Data",
-    imageUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "/images/dataanalysis.jpg",
     icon: <Database className="w-8 h-8 text-rose-500" />,
     accentColor: "from-rose-600/20",
     href: "#contact"
@@ -35,7 +35,7 @@ const SLIDES: Slide[] = [
     subtitle: "Our AWS, Azure, and Google Cloud experts ensure your infrastructure is scalable, secure, and cost-optimized from day one.",
     primaryBtn: "Book Consultation",
     secondaryBtn: "Cloud Services",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "/images/cloud1.png",
     icon: <Globe className="w-8 h-8 text-blue-400" />,
     accentColor: "from-blue-600/20",
     href: "#services"
@@ -47,7 +47,7 @@ const SLIDES: Slide[] = [
     subtitle: "Deploy autonomous AI agents that handle complex inquiries, plan workflows, and provide instant insights to your customers.",
     primaryBtn: "View AI Demo",
     secondaryBtn: "Our Agents",
-    imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "/images/ai.png",
     icon: <Cpu className="w-8 h-8 text-purple-400" />,
     accentColor: "from-purple-600/20",
     href: "#ai"
@@ -59,7 +59,7 @@ const SLIDES: Slide[] = [
     subtitle: "We bridge the gap between business vision and technical execution through end-to-end digital transformation and modern DevOps.",
     primaryBtn: "Get Started",
     secondaryBtn: "Case Studies",
-    imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "/images/saas.jpg",
     icon: <Rocket className="w-8 h-8 text-emerald-400" />,
     accentColor: "from-emerald-600/20",
     href: "#industries"
@@ -71,7 +71,7 @@ const SLIDES: Slide[] = [
     subtitle: "Architecting decentralized, secure, and transparent systems for the next generation of financial and supply chain infrastructure.",
     primaryBtn: "Contact Experts",
     secondaryBtn: "Security Audit",
-    imageUrl: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "/images/block.png",
     icon: <Shield className="w-8 h-8 text-blue-500" />,
     accentColor: "from-blue-900/20",
     href: "#contact"

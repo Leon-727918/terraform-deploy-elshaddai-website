@@ -77,7 +77,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'healthcare',
     name: 'Healthcare',
     description: 'Modernizing patient care through HIPAA-compliant EHR systems and low-latency telehealth platforms.',
-    imageUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/healthcare.jpg',
     icon: <HeartPulse className="w-6 h-6" />,
     highlights: ['EHR Modernization', 'Telehealth', 'Bio-Informatics']
   },
@@ -85,7 +85,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'finance',
     name: 'Finance',
     description: 'Highly secure cloud ecosystems for retail banking, insurance legacy modernization, and DeFi trading.',
-    imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/finance.jpg',
     icon: <Banknote className="w-6 h-6" />,
     highlights: ['Core Banking', 'InsurTech', 'Risk Modeling']
   },
@@ -93,7 +93,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'retail',
     name: 'Retail & E-commerce',
     description: 'Scalable POS systems and hyper-personalized e-commerce journeys powered by agentic AI.',
-    imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/ecomm.jpg',
     icon: <ShoppingCart className="w-6 h-6" />,
     highlights: ['POS Integration', 'Supply Chain', 'Customer AI']
   },
@@ -101,7 +101,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'manufacturing',
     name: 'Manufacturing',
     description: 'Industrial IoT integration and cloud-native ERP solutions for real-time production visibility.',
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/manufacture.jpg',
     icon: <Factory className="w-6 h-6" />,
     highlights: ['ERP Optimization', 'Automation', 'Digital Twin']
   },
@@ -109,7 +109,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'education',
     name: 'Education',
     description: 'Next-gen Learning Management Systems (LMS) and cloud-based administrative automation.',
-    imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/edu1.jpg',
     icon: <GraduationCap className="w-6 h-6" />,
     highlights: ['LMS Scaling', 'Admin Portals', 'Edu-Analytics']
   },
@@ -117,7 +117,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'government',
     name: 'Government',
     description: 'Secure, compliant public sector infrastructure focusing on data sovereignty and accessibility.',
-    imageUrl: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/gov.png',
     icon: <Building2 className="w-6 h-6" />,
     highlights: ['Compliance', 'Citizen Portals', 'Cloud Security']
   },
@@ -133,7 +133,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'media',
     name: 'Media & Entertainment',
     description: 'Scalable streaming infrastructure, digital asset management, and AI-driven content generation.',
-    imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/media1.jpg',
     icon: <Film className="w-6 h-6" />,
     highlights: ['CDN Scaling', 'Digital Assets', 'Media AI']
   },
@@ -141,7 +141,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'realestate',
     name: 'Real Estate',
     description: 'PropTech innovations, virtual tour hosting, and automated property management systems.',
-    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/realestate.jpg',
     icon: <Home className="w-6 h-6" />,
     highlights: ['PropTech', 'Virtual Tours', 'CRM Ops']
   },
@@ -149,7 +149,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'energy',
     name: 'Energy',
     description: 'Smart grid management systems and renewable energy monitoring for modern utility providers.',
-    imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/energy.jpg',
     icon: <Zap className="w-6 h-6" />,
     highlights: ['Smart Grid', 'Renewables', 'Data IoT']
   },
@@ -157,7 +157,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'professional',
     name: 'Professional Services',
     description: 'Secure, high-availability cloud platforms for law firms and global accounting organizations.',
-    imageUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2923216?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/professional.png',
     icon: <Briefcase className="w-6 h-6" />,
     highlights: ['LegalTech', 'Audit Tools', 'SaaS Ops']
   }
@@ -170,7 +170,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'ceo',
     name: 'Gorlin Sushma',
     role: 'CEO & Founder',
-    bio: 'Visionary leader with 15+ years in cloud architecture and enterprise modernization.',
+    bio: 'Visionary leader with 15+ years in banking and FinTech.',
     imageUrl: '/images/sushma2.png',
     linkedinUrl: 'https://www.linkedin.com/in/gorlin-sushma-a0a177135/'
   },
@@ -187,7 +187,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Subi R',
     role: 'Senior Project Manager',
     bio: 'Agile practitioner ensuring seamless delivery of complex cloud transformation projects.',
-    imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=800&q=80',
+    imageUrl: '/images/subi2.png',
     linkedinUrl: 'https://linkedin.com'
   },
   {
