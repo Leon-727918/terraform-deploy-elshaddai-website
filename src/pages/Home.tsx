@@ -159,6 +159,7 @@ const Home: React.FC = () => {
                                     <div>
                                         <p className="text-sm text-slate-500 uppercase tracking-widest">Call Us</p>
                                         <p className="text-white font-bold">+91-7358718587</p>
+                    
                                     </div>
                                 </div>
                                 <div className="flex items-center space-x-4">
@@ -168,8 +169,8 @@ const Home: React.FC = () => {
                                     <div>
                                         <p className="text-sm text-slate-500 uppercase tracking-widest">Global HQ</p>
                                         <p className="text-white font-bold">EL-shaddai Cloud Solutions Pvt Ltd</p>
-                                        <p className="text-white font-bold">Vencode, near Marthandam, Kanyakumari Dist.</p>
-                                        <p className="text-white font-bold">TN, South India.</p>
+                                        <p className="text-white font-bold">Vencode, near Karungal Town, Kanyakumari District.</p>
+                                        <p className="text-white font-bold">Tamil Nadu, South India.</p>
                                         <p className="text-white font-bold">Pin 629171</p>
                                     </div>
                                 </div>

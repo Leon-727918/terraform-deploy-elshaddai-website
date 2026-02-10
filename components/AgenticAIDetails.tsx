@@ -23,7 +23,7 @@ const AGENT_SOLUTIONS = [
     tech: "LangGraph • MCP Federation • Weaviate/Pinecone • DPO Tuning",
     impact: "Demonstrates 'one agent rules them all'—deployable as a cross-departmental copilot or internal SaaS tool.",
     icon: <Network className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    image: "/images/ai.png",
     gradient: "from-rose-600/20 via-transparent to-transparent",
     industries: ["Finance", "Healthcare", "Legal", "Retail", "Manufacturing"],
     dpo: "Aligns routing logic by preferring successful multi-source trajectories over hallucinated paths."
@@ -35,7 +35,7 @@ const AGENT_SOLUTIONS = [
     tech: "ReAct Flow • SAP/Oracle MCP • Google Maps MCP • Finance APIs",
     impact: "Massively reduces manual coordination across Logistics and Retail. Prefers cost-efficient vs risky planning through DPO.",
     icon: <Workflow className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
+    image: "/images/supplychain.png",
     gradient: "from-violet-600/20 via-transparent to-transparent",
     industries: ["Retail", "Manufacturing", "Logistics", "Finance"],
     dpo: "Tuned to prioritize delivery speed and cost-efficiency in complex multi-step logistics."
@@ -47,7 +47,7 @@ const AGENT_SOLUTIONS = [
     tech: "Secure MCP Gateway • Teradata-style RAG • Risk Flagging • Citations",
     impact: "Provides citation-backed answers and auto-generates compliance reports. Risk-averse reasoning built-in.",
     icon: <ShieldAlert className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=800",
+    image: "/images/audit.png",
     gradient: "from-rose-500/20 via-transparent to-transparent",
     industries: ["Finance", "Healthcare", "Legal"],
     dpo: "Tuned to prefer conservative/safe recommendations over aggressive or non-compliant actions."
@@ -59,7 +59,7 @@ const AGENT_SOLUTIONS = [
     tech: "Apify MCP • Finance Tool-Calling • RAG-as-MCP • Traceable Citations",
     impact: "Synthesizes multi-domain reports with traceable sources for pharma deals and tech investments.",
     icon: <SearchCode className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    image: "/images/crossdomain.png",
     gradient: "from-pink-600/20 via-transparent to-transparent",
     industries: ["Finance", "Tech", "Legal", "Healthcare"],
     dpo: "Enhances source verification by preferring trajectories with verified citations."
@@ -71,7 +71,7 @@ const AGENT_SOLUTIONS = [
     tech: "Agent Orchestration • Shared MCP Router • LangGraph Logic",
     impact: "Scales intelligence by silo-breaking. Orchestrates collaborative behavior across Energy, Healthcare, and Finance.",
     icon: <Users className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    image: "/images/multiagent1.png",
     gradient: "from-violet-500/20 via-transparent to-transparent",
     industries: ["Healthcare", "Finance", "Manufacturing", "Energy"],
     dpo: "Optimizes orchestration plans to prefer collaborative paths over redundant siloed queries."
@@ -83,7 +83,7 @@ const AGENT_SOLUTIONS = [
     tech: "Local MCP Client • HR Policy RAG • Investment APIs • Remote Routing",
     impact: "Increases employee productivity by unifying disparate corporate tools into a single reasoning interface.",
     icon: <Sparkles className="w-8 h-8" />,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
+    image: "/images/multiindustry.png",
     gradient: "from-rose-400/20 via-transparent to-transparent",
     industries: ["Travel/Retail", "Finance", "HR/Legal", "Healthcare"],
     dpo: "Aligns assistant tone and task priority with corporate culture and user preferences."

@@ -109,7 +109,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'education',
     name: 'Education',
     description: 'Next-gen Learning Management Systems (LMS) and cloud-based administrative automation.',
-    imageUrl: '/images/edu1.jpg',
+    imageUrl: '/images/edu.jpg',
     icon: <GraduationCap className="w-6 h-6" />,
     highlights: ['LMS Scaling', 'Admin Portals', 'Edu-Analytics']
   },
@@ -117,7 +117,7 @@ export const EXTENDED_INDUSTRIES: ExtendedIndustry[] = [
     id: 'government',
     name: 'Government',
     description: 'Secure, compliant public sector infrastructure focusing on data sovereignty and accessibility.',
-    imageUrl: '/images/gov.png',
+    imageUrl: '/images/gov.jpg',
     icon: <Building2 className="w-6 h-6" />,
     highlights: ['Compliance', 'Citizen Portals', 'Cloud Security']
   },
@@ -200,7 +200,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: 'fullstack',
-    name: 'Shajitha Jose',
+    name: 'Divya S',
     role: 'Full Stack Consultant',
     bio: 'Expert in React, Node.js, and modern frontend architectures for scalable applications.',
     imageUrl: '/images/shajitha2.png',
