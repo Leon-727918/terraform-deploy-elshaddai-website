@@ -159,7 +159,7 @@ const Home: React.FC = () => {
                                     <div>
                                         <p className="text-sm text-slate-500 uppercase tracking-widest">Call Us</p>
                                         <p className="text-white font-bold">+91-7358718587</p>
-                    
+
                                     </div>
                                 </div>
                                 <div className="flex items-center space-x-4">
