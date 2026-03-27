@@ -93,6 +93,10 @@ const AGENT_SOLUTIONS = [
 const AgenticAIDetails: React.FC = () => {
   return (
     <section id="ai-deep-dive" className="py-24 bg-[#020617] relative overflow-hidden scroll-mt-20">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-8 pointer-events-none"
+        style={{backgroundImage:'url(https://images.pexels.com/photos/7688592/pexels-photo-7688592.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)',backgroundSize:'cover',backgroundPosition:'center',mixBlendMode:'overlay'}}></div>
+      
       {/* Dynamic Background Element */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,_rgba(190,18,60,0.08)_0%,_transparent_60%)] pointer-events-none"></div>
       

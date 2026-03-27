@@ -302,6 +302,10 @@ const CloudSolutionsPage: React.FC = () => {
       <div className="relative overflow-hidden text-center py-24 px-4"
         style={{background:'linear-gradient(160deg,#071a1a 0%,#0a2020 50%,#071515 100%)'}}>
 
+        {/* Background Image */}
+        <div className="pointer-events-none absolute inset-0 opacity-10"
+          style={{backgroundImage:'url(https://images.unsplash.com/photo-1623410439361-22ac19216577?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2hub2xvZ3l8ZW58MHx8fHRlYWx8MTc3NDYyNzUzOXww&ixlib=rb-4.1.0&q=85)',backgroundSize:'cover',backgroundPosition:'center',mixBlendMode:'overlay'}} />
+
         {/* Grid overlay */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.035]"
           style={{backgroundImage:'linear-gradient(#2dd4bf 1px,transparent 1px),linear-gradient(90deg,#2dd4bf 1px,transparent 1px)',backgroundSize:'48px 48px'}} />
@@ -372,6 +376,9 @@ const CloudSolutionsPage: React.FC = () => {
       {/* ── CTA STRIP ──────────────────────────────────────────────────── */}
       <div className="relative py-24 px-4 text-center overflow-hidden"
         style={{background:'linear-gradient(160deg,#071a1a 0%,#0a2020 60%,#071515 100%)'}}>
+        {/* Background Image */}
+        <div className="pointer-events-none absolute inset-0 opacity-10"
+          style={{backgroundImage:'url(https://images.pexels.com/photos/5475814/pexels-photo-5475814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)',backgroundSize:'cover',backgroundPosition:'center',mixBlendMode:'overlay'}} />
         <div className="pointer-events-none absolute inset-0 opacity-15"
           style={{background:'linear-gradient(90deg,#0d9488,#0891b2)',filter:'blur(80px)'}} />
         <h2 className="relative text-3xl sm:text-4xl font-extrabold text-white mb-6">

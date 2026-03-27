@@ -54,12 +54,12 @@ const Navbar: React.FC = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-semibold text-slate-300 hover:text-[#BE123C] transition-colors"
+                className="text-[0.9375rem] font-semibold text-slate-300 hover:text-[#BE123C] transition-colors"
               >
                 {item.label}
               </a>
             ))}
-            <button className="bg-[#BE123C] hover:bg-rose-700 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-rose-900/25">
+            <button className="bg-[#BE123C] hover:bg-rose-700 text-white px-6 py-2.5 rounded-full text-[0.9375rem] font-bold transition-all shadow-lg shadow-rose-900/25">
               Contact Sales
             </button>
           </div>

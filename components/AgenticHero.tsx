@@ -4,6 +4,10 @@ import { ArrowRight, ShieldCheck } from 'lucide-react';
 const AgenticHero: React.FC = () => {
     return (
         <section className="relative pt-32 pb-20 overflow-hidden bg-[#020617]">
+            {/* Background Image */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none"
+                style={{backgroundImage:'url(https://images.unsplash.com/photo-1654547615539-f937a90de28d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGFydHxlbnwwfHx8cHVycGxlfDE3NzQ2Mjc1NzZ8MA&ixlib=rb-4.1.0&q=85)',backgroundSize:'cover',backgroundPosition:'center',mixBlendMode:'overlay'}}></div>
+            
             {/* Background Ambient Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-gradient-to-b from-blue-900/20 via-slate-900/10 to-transparent pointer-events-none blur-[120px]"></div>
 
