@@ -24,6 +24,7 @@ import { Service, Industry, NavItem, TeamMember } from './types';
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Services', href: '/#services' },
   { label: 'Industries', href: '/#industries' },
+  { label: 'Cloud Solutions', href: '/cloud-solutions' },
   { label: 'Agentic AI', href: '/agentic-ai' },
   { label: 'About', href: '/about-us' },
   { label: 'Contact', href: '/#contact' },
