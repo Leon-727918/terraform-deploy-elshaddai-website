@@ -1,0 +1,18 @@
+# Dockerfile for AWS Lambda deployment
+FROM public.ecr.aws/lambda/nodejs:20
+
+# Copy package files
+COPY package*.json ./
+
+# Install production dependencies including express and serverless-http
+RUN npm install --production && \
+    npm install express serverless-http
+
+# Copy the built React app
+COPY build/ ./build/
+
+# Copy the Lambda server
+COPY lambda-server.js ./
+
+# Set the CMD to your handler
+CMD [ "lambda-server.handler" ]
