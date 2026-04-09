@@ -74,7 +74,8 @@ const CloudSolutions: React.FC = () => {
           Modernize your infrastructure and scale efficiently
         </p>
         <a 
-          href="#download" 
+          href="/Cloud_Transformation.pdf" 
+          download="Cloud_Transformation.pdf"
           className="inline-block bg-gradient-to-r from-white to-gray-200 text-blue-600 px-6 py-3 rounded-full font-semibold shadow hover:scale-105 transition-transform duration-300"
         >
           Download PDF
@@ -140,8 +141,8 @@ const CloudSolutions: React.FC = () => {
           Download the complete Cloud Transformation PDF
         </p>
         <a 
-          href="/cloud-transformation.pdf" 
-          download 
+          href="/Cloud_Transformation.pdf" 
+          download="Cloud_Transformation.pdf"
           className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
         >
           <Download className="w-5 h-5" />
