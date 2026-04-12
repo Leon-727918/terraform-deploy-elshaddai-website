@@ -7,6 +7,7 @@ import Home from './src/pages/Home';
 import AgenticAI from './src/pages/AgenticAI';
 import AboutUs from './src/pages/AboutUs';
 import CloudSolutions from './src/pages/CloudSolutions';
+import Security from './src/pages/Security';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/agentic-ai" element={<AgenticAI />} />
             <Route path="/cloud-solutions" element={<CloudSolutions />} />
+            <Route path="/security" element={<Security />} />
             <Route path="/about-us" element={<AboutUs />} />
           </Routes>
         </main>
