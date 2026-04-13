@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo Section matching the uploaded image style */}
-          <div className="flex items-center space-x-3 group cursor-pointer py-2">
+          <a href="/" className="flex items-center space-x-3 group cursor-pointer py-2">
                  <img 
               src="/images/logo3.png" 
               alt="Elshaddai Cloud Solutions" 
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
              {/* TRANSFORMACIÓN DIGITAL */}
               </span>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
