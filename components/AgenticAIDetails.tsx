@@ -1,93 +1,89 @@
-
 import React from 'react';
 import { 
-  Network, 
-  Workflow, 
-  ShieldAlert, 
-  SearchCode, 
-  Users, 
-  Sparkles,
-  Database,
-  Cpu,
-  ArrowRight,
-  Fingerprint,
-  Zap,
-  Layers
+  MessageSquare,
+  Brain,
+  FileText,
+  Users,
+  Briefcase,
+  Shield,
+  ArrowRight
 } from 'lucide-react';
 
-const AGENT_SOLUTIONS = [
+const USE_CASES = [
   {
-    title: "Universal Enterprise Knowledge Agent",
-    subtitle: "Cross-Industry RAG + MCP Hub",
-    description: "A single orchestrator connecting 5-10 MCP servers (Google, Teradata, custom Python) and multiple RAG backends. Routes queries across Finance, Healthcare, and Legal by autonomously selecting the right tool/context.",
-    tech: "LangGraph • MCP Federation • Weaviate/Pinecone • DPO Tuning",
-    impact: "Demonstrates 'one agent rules them all'—deployable as a cross-departmental copilot or internal SaaS tool.",
-    icon: <Network className="w-8 h-8" />,
-    image: "/images/ai.png",
-    gradient: "from-rose-600/20 via-transparent to-transparent",
-    industries: ["Finance", "Healthcare", "Legal", "Retail", "Manufacturing"],
-    dpo: "Aligns routing logic by preferring successful multi-source trajectories over hallucinated paths."
+    id: 1,
+    number: '1️⃣',
+    title: 'Multi-Channel Customer Support',
+    subtitle: 'Build a 24/7 AI support system across WhatsApp, Telegram & Email',
+    before: 'Slow, manual responses',
+    after: '80% faster, 60% automated',
+    tech: 'WhatsApp API • Telegram Bot • AI Classification',
+    description: 'Builds an AI support system that handles customer queries across WhatsApp, Telegram, and Email. Reduces support workload and enables 24/7 customer service.',
+    icon: <MessageSquare className="w-12 h-12" />,
+    color: 'from-blue-500 to-cyan-500',
+    bgGlow: 'bg-blue-500/20',
   },
   {
-    title: "Supply Chain Orchestrator Agent",
-    subtitle: "End-to-End Multi-Industry Logistics",
-    description: "Managed actions: demand forecasting (Retail RAG), supplier status (Manufacturing MCP), and logistics optimization (Maps MCP). Integrates directly with SAP/Oracle ERP systems via custom MCP servers.",
-    tech: "ReAct Flow • SAP/Oracle MCP • Google Maps MCP • Finance APIs",
-    impact: "Massively reduces manual coordination across Logistics and Retail. Prefers cost-efficient vs risky planning through DPO.",
-    icon: <Workflow className="w-8 h-8" />,
-    image: "/images/supplychain.png",
-    gradient: "from-violet-600/20 via-transparent to-transparent",
-    industries: ["Retail", "Manufacturing", "Logistics", "Finance"],
-    dpo: "Tuned to prioritize delivery speed and cost-efficiency in complex multi-step logistics."
+    id: 2,
+    number: '2️⃣',
+    title: 'Company Knowledge Assistant (RAG)',
+    subtitle: 'AI assistant that answers from internal company knowledge',
+    before: 'Hours spent searching',
+    after: '75% faster search, 2x onboarding',
+    tech: 'Vector DB • Pinecone/Chroma • RAG Pipeline',
+    description: 'An AI assistant that answers questions using internal company documents. Improves productivity and makes company knowledge instantly accessible.',
+    icon: <Brain className="w-12 h-12" />,
+    color: 'from-purple-500 to-pink-500',
+    bgGlow: 'bg-purple-500/20',
   },
   {
-    title: "Regulated Compliance & Audit Agent",
-    subtitle: "Continuous Governance & Risk Guardrails",
-    description: "Audits documents/processes for KYC/AML, HIPAA, and contract review. Pulls context via secure RAG policy docs and executes live database queries via MCP without exposing raw sensitive data.",
-    tech: "Secure MCP Gateway • Teradata-style RAG • Risk Flagging • Citations",
-    impact: "Provides citation-backed answers and auto-generates compliance reports. Risk-averse reasoning built-in.",
-    icon: <ShieldAlert className="w-8 h-8" />,
-    image: "/images/audit.png",
-    gradient: "from-rose-500/20 via-transparent to-transparent",
-    industries: ["Finance", "Healthcare", "Legal"],
-    dpo: "Tuned to prefer conservative/safe recommendations over aggressive or non-compliant actions."
+    id: 3,
+    number: '3️⃣',
+    title: 'Intelligent Document Processing',
+    subtitle: 'Automate extraction of invoices, contracts & documents',
+    before: 'Manual errors & delays',
+    after: '10x faster, 70% cost reduction',
+    tech: 'Document AI • Validation Rules • ERP Integration',
+    description: 'Automates extraction and validation of invoices, contracts, and resumes. Eliminates repetitive manual work and improves accuracy.',
+    icon: <FileText className="w-12 h-12" />,
+    color: 'from-green-500 to-emerald-500',
+    bgGlow: 'bg-green-500/20',
   },
   {
-    title: "Cross-Domain Research & Due Diligence",
-    subtitle: "M&A Intelligence & Market Entry",
-    description: "Automated research for M&A: analyzes tech patents (RAG), financials (Finance MCP), news (Web MCP), and regulatory filings. Combines Apify and Google Services into a unified research output.",
-    tech: "Apify MCP • Finance Tool-Calling • RAG-as-MCP • Traceable Citations",
-    impact: "Synthesizes multi-domain reports with traceable sources for pharma deals and tech investments.",
-    icon: <SearchCode className="w-8 h-8" />,
-    image: "/images/crossdomain.png",
-    gradient: "from-pink-600/20 via-transparent to-transparent",
-    industries: ["Finance", "Tech", "Legal", "Healthcare"],
-    dpo: "Enhances source verification by preferring trajectories with verified citations."
+    id: 4,
+    number: '🔐',
+    title: 'Server Security (LLM + Blockchain)',
+    subtitle: 'AI-powered real-time server security with tamper-proof logging',
+    before: 'Reactive security, tampered logs',
+    after: 'Real-time threat detection + immutable audit trail',
+    tech: 'LLM Monitoring • SIEM • Blockchain Logs • Smart Contracts',
+    description: 'An intelligent security system where an LLM-powered AI agent continuously monitors server activity, detects threats, and logs critical events immutably using blockchain.',
+    icon: <Shield className="w-12 h-12" />,
+    color: 'from-red-500 to-rose-500',
+    bgGlow: 'bg-red-500/20',
+    featured: true,
+  },
+];
+
+const ADDITIONAL_CASES = [
+  {
+    number: '4️⃣',
+    title: 'Multi-Agent Business System',
+    description: 'Multiple AI agents collaborate like a team to automate workflows. Handles complex, multi-step business operations efficiently.',
+    before: 'Long business cycles (days)',
+    after: 'Completed in hours with scalability',
+    tech: 'Agent Orchestration • Supervisor-Worker model • State Management',
+    icon: <Users className="w-10 h-10" />,
   },
   {
-    title: "Hybrid Multi-Agent System (MCP Federation)",
-    subtitle: "Orchestrated specialized sub-agents",
-    description: "A hierarchy of agents (one per industry) communicating via a shared MCP router. A Healthcare agent consults a Finance agent for billing, while Manufacturing handles device supply.",
-    tech: "Agent Orchestration • Shared MCP Router • LangGraph Logic",
-    impact: "Scales intelligence by silo-breaking. Orchestrates collaborative behavior across Energy, Healthcare, and Finance.",
-    icon: <Users className="w-8 h-8" />,
-    image: "/images/multiagent1.png",
-    gradient: "from-violet-500/20 via-transparent to-transparent",
-    industries: ["Healthcare", "Finance", "Manufacturing", "Energy"],
-    dpo: "Optimizes orchestration plans to prefer collaborative paths over redundant siloed queries."
+    number: '5️⃣',
+    title: 'Smart Business Automation Agent',
+    description: 'An autonomous AI agent for departments like Sales, Finance, HR, and Marketing. Automates end-to-end processes with minimal human input.',
+    before: 'Hours of manual processing',
+    after: '60–80% automation',
+    tech: 'React Agents • Function Calling • Memory Systems',
+    icon: <Briefcase className="w-10 h-10" />,
   },
-  {
-    title: "Multi-Industry Life/Corporate Assistant",
-    subtitle: "Executive Edge & HR Automation",
-    description: "Employee-facing agent handling mixed tasks: travel booking (Maps MCP), investment tracking (Finance MCP), and HR policy queries (Internal RAG). Deployed via desktop/mobile local MCP clients.",
-    tech: "Local MCP Client • HR Policy RAG • Investment APIs • Remote Routing",
-    impact: "Increases employee productivity by unifying disparate corporate tools into a single reasoning interface.",
-    icon: <Sparkles className="w-8 h-8" />,
-    image: "/images/multiindustry.png",
-    gradient: "from-rose-400/20 via-transparent to-transparent",
-    industries: ["Travel/Retail", "Finance", "HR/Legal", "Healthcare"],
-    dpo: "Aligns assistant tone and task priority with corporate culture and user preferences."
-  }
 ];
 
 const AgenticAIDetails: React.FC = () => {
@@ -101,133 +97,135 @@ const AgenticAIDetails: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,_rgba(190,18,60,0.08)_0%,_transparent_60%)] pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-end justify-between mb-24 gap-8 border-b border-white/5 pb-16">
-          <div className="max-w-3xl">
-            <div className="flex items-center space-x-3 mb-4">
-              <Layers className="w-5 h-5 text-rose-500" />
-              <h2 className="text-rose-500 font-bold tracking-[0.3em] uppercase text-xs">
-                Deep Dive: Agentic Systems
-              </h2>
-            </div>
-            <p className="text-4xl lg:text-7xl font-black text-white leading-none tracking-tighter mb-8">
-              High-Impact <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-pink-500 to-violet-500">
-                Agentic Architectures
-              </span>
-            </p>
-            <p className="text-slate-400 text-xl leading-relaxed max-w-2xl">
-              We build specialized, reasoning-capable systems that leverage MCP (Model Context Protocol) and RAG to bridge legacy gaps and automate the "impossible."
-            </p>
-          </div>
-          <div className="hidden lg:block">
-            <div className="glass p-6 rounded-3xl border-rose-500/20 flex items-center space-x-6">
-              <Zap className="w-8 h-8 text-rose-500 animate-pulse" />
-              <div>
-                <p className="text-white font-bold text-sm uppercase">Federated MCP Hub</p>
-                <p className="text-slate-500 text-xs font-medium">REAL-TIME AGENT ORCHESTRATION ACTIVE</p>
-              </div>
-            </div>
-          </div>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-rose-500 font-bold tracking-[0.3em] uppercase text-xs mb-4">
+            AI Use Cases
+          </h2>
+          <p className="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+            Transform Your Business <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">
+              With AI Automation
+            </span>
+          </p>
+          <p className="text-slate-400 text-xl max-w-3xl mx-auto">
+            Practical, production-ready AI solutions that deliver measurable business impact
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-12">
-          {AGENT_SOLUTIONS.map((agent, index) => (
-            <div 
-              key={index} 
-              className="group relative glass rounded-[4rem] border-white/5 overflow-hidden transition-all duration-1000 hover:border-rose-500/30"
+        {/* 2x2 Grid - Main Use Cases */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {USE_CASES.map((useCase) => (
+            <div
+              key={useCase.id}
+              className={`group relative glass rounded-3xl border-white/10 overflow-hidden hover:border-rose-500/30 transition-all duration-500 ${useCase.featured ? 'md:col-span-2 lg:col-span-1' : ''}`}
             >
-              <div className="flex flex-col lg:flex-row items-stretch min-h-[500px]">
-                {/* Visual Side */}
-                <div className="lg:w-2/5 relative overflow-hidden">
-                  <img 
-                    src={agent.image} 
-                    alt={agent.title} 
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 grayscale-[40%] group-hover:grayscale-0"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-r ${agent.gradient}`}></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 bg-black/60 backdrop-blur-2xl border border-white/10 rounded-[2rem] flex items-center justify-center text-rose-500 shadow-2xl group-hover:rotate-12 transition-transform duration-700">
-                      {agent.icon}
-                    </div>
+              {/* Background Glow */}
+              <div className={`absolute top-0 right-0 w-64 h-64 ${useCase.bgGlow} rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000`}></div>
+              
+              <div className="relative p-8">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className={`p-4 rounded-2xl bg-gradient-to-br ${useCase.color} text-white`}>
+                    {useCase.icon}
+                  </div>
+                  <span className="text-4xl">{useCase.number}</span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-pink-400 transition-all">
+                  {useCase.title}
+                </h3>
+                <p className="text-slate-400 text-sm mb-6">
+                  {useCase.subtitle}
+                </p>
+
+                {/* Before/After */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl">
+                    <p className="text-[10px] font-bold text-red-400 uppercase mb-1">BEFORE</p>
+                    <p className="text-white text-sm">{useCase.before}</p>
+                  </div>
+                  <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl">
+                    <p className="text-[10px] font-bold text-green-400 uppercase mb-1">AFTER</p>
+                    <p className="text-white text-sm">{useCase.after}</p>
                   </div>
                 </div>
 
-                {/* Content Side */}
-                <div className="lg:w-3/5 p-8 lg:p-20 flex flex-col justify-center">
-                  <div className="flex items-center space-x-4 mb-8">
-                    <span className="px-5 py-2 bg-rose-500/10 border border-rose-500/20 text-rose-400 text-[10px] font-black uppercase tracking-[0.25em] rounded-full">
-                      {agent.subtitle}
-                    </span>
-                  </div>
-
-                  <h3 className="text-3xl lg:text-5xl font-black text-white mb-8 group-hover:text-rose-400 transition-colors leading-tight">
-                    {agent.title}
-                  </h3>
-                  
-                  <div className="space-y-8">
-                    <div>
-                      <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-3 flex items-center">
-                        <Cpu className="w-3 h-3 mr-2 text-rose-500" /> Core Concept & Flow
-                      </h4>
-                      <p className="text-slate-300 text-lg leading-relaxed font-light">
-                        {agent.description}
-                      </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                      <div>
-                        <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-3 flex items-center">
-                          <Database className="w-3 h-3 mr-2 text-blue-500" /> Technical Stack
-                        </h4>
-                        <p className="text-slate-400 text-sm font-medium">{agent.tech}</p>
-                      </div>
-                      <div>
-                        <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-3 flex items-center">
-                          <Fingerprint className="w-3 h-3 mr-2 text-purple-500" /> DPO Twist
-                        </h4>
-                        <p className="text-slate-400 text-sm font-medium italic">"{agent.dpo}"</p>
-                      </div>
-                    </div>
-
-                    <div className="pt-6 border-t border-white/5">
-                      <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4">Industries Connected</h4>
-                      <div className="flex flex-wrap gap-3">
-                        {agent.industries.map(ind => (
-                          <span key={ind} className="px-4 py-1.5 bg-white/5 text-slate-300 text-xs font-bold rounded-xl border border-white/5 group-hover:border-rose-500/20 transition-all">
-                            {ind}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <button className="bg-[#BE123C] text-white px-10 py-4 rounded-2xl font-black uppercase text-xs tracking-[0.1em] hover:bg-rose-700 transition-all flex items-center group/btn shadow-xl shadow-rose-900/20">
-                      Case Study <ArrowRight className="ml-3 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
-                    <p className="text-slate-500 text-xs font-bold italic max-w-[200px]">
-                      {agent.impact}
-                    </p>
-                  </div>
+                {/* Tech Stack */}
+                <div className="mb-6">
+                  <p className="text-[10px] font-bold text-slate-500 uppercase mb-2">Tech Stack</p>
+                  <p className="text-cyan-400 text-sm font-mono">{useCase.tech}</p>
                 </div>
+
+                {/* Description */}
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  {useCase.description}
+                </p>
+
+                {/* CTA */}
+                <button className="w-full bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 group/btn">
+                  Learn More <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </button>
               </div>
             </div>
           ))}
         </div>
 
+        {/* Additional Use Cases - Compact Cards */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">
+            More <span className="text-rose-500">AI Solutions</span>
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {ADDITIONAL_CASES.map((useCase, index) => (
+              <div
+                key={index}
+                className="glass rounded-2xl border-white/10 p-6 hover:border-rose-500/30 transition-all"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-violet-500 to-purple-500 text-white">
+                    {useCase.icon}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">{useCase.number}</span>
+                      <h4 className="text-lg font-bold text-white">{useCase.title}</h4>
+                    </div>
+                    <p className="text-slate-400 text-sm mb-4">{useCase.description}</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-3 mb-3">
+                  <div className="p-2 bg-red-500/10 border border-red-500/20 rounded">
+                    <p className="text-[9px] font-bold text-red-400 uppercase">Before</p>
+                    <p className="text-white text-xs">{useCase.before}</p>
+                  </div>
+                  <div className="p-2 bg-green-500/10 border border-green-500/20 rounded">
+                    <p className="text-[9px] font-bold text-green-400 uppercase">After</p>
+                    <p className="text-white text-xs">{useCase.after}</p>
+                  </div>
+                </div>
+                
+                <p className="text-cyan-400 text-xs font-mono">{useCase.tech}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Closing CTA */}
-        <div className="mt-32 glass p-12 lg:p-20 rounded-[4rem] border-rose-500/20 text-center relative overflow-hidden group">
-           <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/10 rounded-full blur-[100px] -mr-48 -mt-48 transition-transform duration-1000 group-hover:scale-150"></div>
-           <h3 className="text-4xl lg:text-6xl font-black text-white mb-8 relative z-10">
-             Ready to deploy your <br />
-             <span className="text-rose-500 italic">Federated</span> Intelligence?
-           </h3>
-           <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-12 relative z-10">
-             Our architects don't just build agents; we build the standardized MCP infrastructure that allows them to reason across your entire organization.
-           </p>
-           <button className="relative z-10 bg-white text-rose-600 px-12 py-5 rounded-[2rem] font-black uppercase text-sm tracking-widest hover:scale-105 transition-all shadow-2xl">
-             Consult a Lead Architect
-           </button>
+        <div className="glass p-12 lg:p-16 rounded-3xl border-rose-500/20 text-center relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/10 rounded-full blur-[100px] -mr-48 -mt-48 transition-transform duration-1000 group-hover:scale-150"></div>
+          <h3 className="text-3xl lg:text-5xl font-black text-white mb-6 relative z-10">
+            Ready to Automate <br />
+            <span className="text-rose-500 italic">Your Business</span>?
+          </h3>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10 relative z-10">
+            Let's discuss how AI can transform your operations. Our experts will help you choose the right solution for your needs.
+          </p>
+          <button className="relative z-10 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-12 py-5 rounded-2xl font-black uppercase text-sm tracking-widest transition-all shadow-2xl hover:scale-105">
+            Schedule Consultation
+          </button>
         </div>
       </div>
     </section>

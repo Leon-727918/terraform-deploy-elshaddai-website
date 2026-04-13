@@ -205,7 +205,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Divya S',
     role: 'Full Stack Consultant',
     bio: 'Expert in React, Node.js, and modern frontend architectures for scalable applications.',
-    imageUrl: '/images/shajitha2.png',
+    imageUrl: '/images/divya-new.png',
     linkedinUrl: 'https://linkedin.com'
   },
    {
