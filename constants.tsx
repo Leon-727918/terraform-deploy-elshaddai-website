@@ -186,7 +186,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: 'pm',
-    name: 'Subi R',
+    name: 'Bershika J',
     role: 'Senior Project Manager',
     bio: 'Agile practitioner ensuring seamless delivery of complex cloud transformation projects.',
     imageUrl: '/images/subi2.png',
@@ -202,7 +202,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: 'fullstack',
-    name: 'Divya S',
+    name: 'Tiffany K,
     role: 'Full Stack Consultant',
     bio: 'Expert in React, Node.js, and modern frontend architectures for scalable applications.',
     imageUrl: '/images/divya-new.png',
