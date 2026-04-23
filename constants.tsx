@@ -202,7 +202,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: 'fullstack',
-    name: 'Tiffany K,
+    name: 'Tiffany K',
     role: 'Full Stack Consultant',
     bio: 'Expert in React, Node.js, and modern frontend architectures for scalable applications.',
     imageUrl: '/images/divya-new.png',
